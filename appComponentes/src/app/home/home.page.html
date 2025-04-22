@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Blank</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="content-layout">
+
+ 
+  <!-- Sección de Toast -->
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title>Inline Toast</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <div class="toast-section ion-padding">
+    <ion-button id="open-toast" expand="block">Open</ion-button>
+    <p id="message">This toast example uses triggers to automatically open a toast when the button is clicked.</p>
+    <ion-toast trigger="open-toast" message="This toast will disappear after 5 seconds" [duration]="5000"></ion-toast>
+  </div>
+
+  <!-- Sección de Radio -->
+  <div class="radio-group ion-padding">
+    <ion-radio-group value="strawberries">
+      <ion-radio value="grapes">Grapes</ion-radio><br />
+      <ion-radio value="strawberries">Strawberries</ion-radio><br />
+      <ion-radio value="pineapple">Pineapple</ion-radio><br />
+      <ion-radio value="cherries">Cherries</ion-radio>
+    </ion-radio-group>
+  </div>
+
+  <!-- Sección de Checkboxes -->
+  <div class="checkbox-group ion-padding">
+    <ion-checkbox labelPlacement="start">Label at the Start</ion-checkbox><br />
+    <ion-checkbox labelPlacement="end">Label at the End</ion-checkbox><br />
+    <ion-checkbox labelPlacement="fixed">Fixed Width Label</ion-checkbox><br />
+    <ion-checkbox labelPlacement="stacked">Stacked Label</ion-checkbox>
+  </div>
+
+  <!-- Sección de DateTime -->
+  <div class="datetime-section ion-padding">
+    <ion-datetime class="ion-margin-top"></ion-datetime>
+  </div>
+
+  <!-- Sección de Refresh -->
+  <div class="refresh-section ion-padding">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Pull to Refresh</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    
+    <p>Pull this content down to trigger the refresh.</p>
+  </div>
+
+  <!-- Footer Section -->
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title>Footer Toolbar</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+
+</ion-content>
