@@ -30,13 +30,15 @@ export class PhotoService {
   if (this.platform.is('hybrid')){
     return{
       filepath: savedFile.uri,
-      webviewPath: Capacitor.convertFileSrc(savedFile.uri)
+      webviewPath: Capacitor.convertFileSrc(savedFile.uri),
+      fileName:fileName
     };
   }
   else{
     return {
       filepath: fileName,
-      webviewPath: photo.webPath
+      webviewPath: photo.webPath,
+      fileName:fileName
     };
   }  
   }
@@ -73,17 +75,17 @@ export class PhotoService {
     reader.readAsDataURL(blob);
   });
 
-  public async addNewToGallery(){
+  public async addNewToGallery(quality: number = 100){
     const capturedPhoto=await Camera.getPhoto({
       resultType:CameraResultType.Uri,
       source:CameraSource.Camera,
-      quality:100
+      quality: quality
     });
 
     const savedImageFile=await this.savePicture(capturedPhoto)
     this.photos.unshift(savedImageFile)
 
-    Preferences.set({
+    await Preferences.set({
       key: this.PHOTO_STORAGE,
       value: JSON.stringify(this.photos),
     });
@@ -121,5 +123,6 @@ export class PhotoService {
 }
 export interface UserPhoto{
   filepath:string;
-  webviewPath?:string
+  webviewPath?:string;
+  fileName: string;
 }

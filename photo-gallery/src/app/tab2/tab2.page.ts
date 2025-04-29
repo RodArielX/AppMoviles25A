@@ -7,7 +7,7 @@ import {PhotoService} from '../services/photo.service'
   styleUrls: ['tab2.page.scss'],
   standalone: false,
 })
-export class Tab2Page {
+/*export class Tab2Page {
 
   constructor(public photoService:PhotoService) {}
     addPhotoToGallery(){
@@ -18,4 +18,11 @@ export class Tab2Page {
       await this.photoService.loadSaved();
     }
   
+}*/
+export class Tab2Page {
+  constructor(public photoService: PhotoService) {}
+
+  addPhotoToGallery(quality: number) {
+    this.photoService.addNewToGallery(quality);
+  }
 }

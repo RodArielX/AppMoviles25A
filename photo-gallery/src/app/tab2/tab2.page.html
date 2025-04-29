@@ -1,25 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Photo Gallery
+      Photo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
-        <ion-img [src]="photo.webviewPath"></ion-img>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="addPhotoToGallery()">
-      <ion-icon name="camera"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+<ion-content class="ion-padding" fullscreen>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+
+        <!-- Boton calidad 100% -->
+        <ion-col size="6" class="ion-text-center">
+          <ion-button shape="round" color="primary" (click)="addPhotoToGallery(100)">
+            <ion-icon name="camera" slot="icon-only"></ion-icon>
+          </ion-button>
+          <p style="font-size: 12px;">Alta Calidad</p>
+        </ion-col>
+
+        <!-- Boton calidad 50% -->
+        <ion-col size="6" class="ion-text-center">
+          <ion-button shape="round" color="warning" (click)="addPhotoToGallery(50)">
+            <ion-icon name="camera" slot="icon-only"></ion-icon>
+          </ion-button>
+          <p style="font-size: 12px;">Calidad Media</p>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
