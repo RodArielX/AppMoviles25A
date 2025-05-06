@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Formulario de Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="form-wrapper">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      
+      <!-- DATOS DE USUARIO -->
+      <h2 class="section-title">Datos de usuario</h2>
+
+      <ion-item class="custom-item">
+        <ion-label position="floating">Nombre de usuario</ion-label>
+        <ion-input formControlName="username" required></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-item">
+        <ion-label position="floating">Correo electrónico</ion-label>
+        <ion-input type="email" formControlName="email" required></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-item">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" formControlName="password" required></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-item">
+        <ion-label position="floating">Confirmar contraseña</ion-label>
+        <ion-input type="password" formControlName="confirmPassword" required></ion-input>
+      </ion-item>
+
+      <!-- INFORMACIÓN ADICIONAL -->
+      <h2 class="section-title">Información adicional</h2>
+
+      <div class="row">
+        <ion-item class="column custom-item">
+          <ion-label position="floating">Fecha de nacimiento</ion-label>
+          <ion-datetime presentation="date" formControlName="birthDate" required></ion-datetime>
+        </ion-item>
+
+        <ion-item class="column custom-item">
+          <ion-label position="floating">Género</ion-label>
+          <ion-select formControlName="gender" required>
+            <ion-select-option value="masculino">Masculino</ion-select-option>
+            <ion-select-option value="femenino">Femenino</ion-select-option>
+            <ion-select-option value="otro">Otro</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+
+      <ion-item class="custom-item">
+        <ion-label position="floating">Intereses</ion-label>
+        <ion-select formControlName="interests" multiple="true" required>
+          <ion-select-option value="tecnologia">Tecnología</ion-select-option>
+          <ion-select-option value="videojuegos">Videojuegos</ion-select-option>
+          <ion-select-option value="musica">Música</ion-select-option>
+          <ion-select-option value="deportes">Deportes</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item lines="none" class="terms custom-item">
+        <ion-label>¿Acepta los términos?</ion-label>
+        <ion-checkbox formControlName="termsAccepted" slot="end" required></ion-checkbox>
+      </ion-item>
+
+      <ion-button expand="block" type="submit" [disabled]="!registerForm.valid" class="ion-margin-top">
+        Registrarse
+      </ion-button>
+    </form>
+  </div>
+</ion-content>
+
+<!-- Agregar algunos estilos CSS para mejorar la estética -->
+<style>
+  .form-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 20px;
+    margin: 20px 0;
+    text-align: center;
+    color: #007acc;
+  }
+
+  .custom-item {
+    margin-bottom: 20px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .column {
+    width: 48%;
+  }
+
+  ion-button {
+    background-color: #007acc;
+    color: white;
+  }
+
+  ion-button:disabled {
+    background-color: #ddd;
+  }
+
+  .terms {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+Ariel Ashqui
+Links GitHub
+Apartado A
+https://github.com/RodArielX/AppMoviles25A/pull/new/literal-a-nombre-archivo
+
+Apartado B
+https://github.com/RodArielX/AppMoviles25A/pull/new/literal-b-mostrar-en-tab3
+
+Apartado C
+https://github.com/RodArielX/AppMoviles25A/pull/new/literal-c-boton-cargar-fotos
+
+Apartado D
+https://github.com/RodArielX/AppMoviles25A/pull/new/literal-d-foto-calidad-50
+
+Link del GitHub
+https://github.com/RodArielX/AppMoviles25A.git
