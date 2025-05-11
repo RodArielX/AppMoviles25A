@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-
-  firebaseConfig : {
+  // Mi Api Key - Ariel Ashqui
+  /*firebaseConfig : {
   apiKey: "AIzaSyBe1e1E1oEU-eFB91nIAQkop49BzX6wN6k",
   authDomain: "appmoviles-ariel.firebaseapp.com",
   projectId: "appmoviles-ariel",
@@ -13,7 +13,18 @@ export const environment = {
   messagingSenderId: "662707977365",
   appId: "1:662707977365:web:482115d3aea28fa27def9c",
   measurementId: "G-5L5180LDYP"
-}
+}*/
+
+  // Api Key del inge
+  firebaseConfig: {
+    apiKey: "AIzaSyByQgiCUzf3gYfFYcw4Pl7Rec-yRFjSIZA",
+    authDomain: "a-e2689.firebaseapp.com",
+    projectId: "a-e2689",
+    storageBucket: "a-e2689.firebasestorage.app",
+    messagingSenderId: "941773529283",
+    appId: "1:941773529283:web:8a9199b937e0fe88a88276",
+    measurementId: "G-PB8QCM0HKG"
+  }
 
 };
 
