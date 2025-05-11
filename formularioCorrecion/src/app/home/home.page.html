@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Formulario Correccion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Datos personales</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form (ngSubmit)="enviar()">
+        <ion-item lines="inset">
+          <ion-label position="stacked">Nombre</ion-label>
+          <ion-input [(ngModel)]="datos.nombre" name="nombre" required></ion-input>
+        </ion-item>
+
+        <ion-item lines="inset">
+          <ion-label position="stacked">Correo</ion-label>
+          <ion-input type="email" [(ngModel)]="datos.correo" name="correo" required></ion-input>
+        </ion-item>
+
+        <ion-item lines="inset">
+          <ion-label position="stacked">Teléfono</ion-label>
+          <ion-input type="tel" [(ngModel)]="datos.telefono" name="telefono"></ion-input>
+        </ion-item>
+
+        <ion-item lines="inset">
+          <ion-label position="stacked">Género</ion-label>
+          <ion-select [(ngModel)]="datos.genero" name="genero" required>
+            <ion-select-option value="Masculino">Masculino</ion-select-option>
+            <ion-select-option value="Femenino">Femenino</ion-select-option>
+            <ion-select-option value="Otro">Otro</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item lines="inset">
+          <ion-label position="stacked">Fecha de nacimiento</ion-label>
+          <ion-datetime presentation="date" [(ngModel)]="datos.nacimiento" name="nacimiento" required>
+          </ion-datetime>
+        </ion-item>
+
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Preferencias</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-item lines="inset">
+              <ion-label position="stacked">Intereses</ion-label>
+              <ion-select [(ngModel)]="datos.intereses" name="intereses" multiple="true" interface="alert" required>
+                <ion-select-option *ngFor="let interes of opcionesIntereses" [value]="interes">{{ interes
+                  }}</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item lines="inset">
+              <ion-label position="stacked">¿Cómo conociste esta app?</ion-label>
+              <ion-select [(ngModel)]="datos.origen" name="origen" required>
+                <ion-select-option *ngFor="let opcion of opcionesOrigen" [value]="opcion">{{ opcion
+                  }}</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item lines="inset">
+              <ion-label position="stacked">¿Deseas recibir noticias?</ion-label>
+              <ion-select [(ngModel)]="datos.noticias" name="noticias" required>
+                <ion-select-option *ngFor="let opcion of opcionesNoticias" [value]="opcion">{{ opcion
+                  }}</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-button expand="block" type="submit" class="ion-margin-top">ENVIAR</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
